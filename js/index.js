@@ -12,36 +12,28 @@ document.getElementById('load-champions').addEventListener('click', () => {
         const champion = new Champion(champions[champ]);
         const championImageUrl = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`;
 
-        // Estructura HTML con frente y reverso sin "Ver más"
         const cardHTML = `
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
               <div class="card-image">
                 <img src="${championImageUrl}" alt="${champion.name}">
-                </div class="info">
-                <div>
-                <h3>${champion.name}</h3>
-                <p> ${champion.title}</p>
-                </div>
+              </div>
+              <h3>${champion.name}</h3>
+              <p>${champion.title}</p>
             </div>
             <div class="card-back">
+              <div class="back-info">
               <h3>${champion.name}</h3>
               <p>${champion.blurb}</p>
-               <p class="tipos"> ${champion.tags}</p>
+              </div>
+              <p class="tipos">${champion.tags.join(', ')}</p>
             </div>
           </div>
         </div>`;
 
-        container.innerHTML += cardHTML;
+        container.innerHTML += cardHTML; // Añadir la carta al contenedor
       }
-
-      // Seleccionar todas las tarjetas y añadirles el evento click para hacer flip
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        card.addEventListener('click', () => {
-          card.querySelector('.card-inner').classList.toggle('is-flipped'); // Hacer flip
-        });
-      });
-    });
+    })
+    .catch(error => console.error('Error al cargar los campeones:', error));
 });
