@@ -157,7 +157,7 @@ document.getElementById('load-champions').addEventListener('click', function () 
     for (var champ in champions) {
       var champion = new _char.default(champions[champ]);
       var championImageUrl = "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/".concat(champion.id, "_0.jpg");
-      var cardHTML = "\n        <div class=\"card\">\n          <div class=\"card-inner\">\n            <div class=\"card-front\">\n              <div class=\"card-image\">\n                <img src=\"".concat(championImageUrl, "\" alt=\"").concat(champion.name, "\">\n              </div>\n              <h3>").concat(champion.name, "</h3>\n              <p>").concat(champion.title, "</p>\n            </div>\n            <div class=\"card-back\">\n              <div class=\"back-info\">\n              <h3>").concat(champion.name, "</h3>\n              <p>").concat(champion.blurb, "</p>\n              </div>\n              <p class=\"tipos\">").concat(champion.tags.join(', '), "</p>\n            </div>\n          </div>\n        </div>");
+      var cardHTML = "\n        <div class=\"card\">\n          <div class=\"card-inner\">\n            <div class=\"card-front\">\n              <div class=\"card-image\">\n                <img src=\"".concat(championImageUrl, "\" alt=\"").concat(champion.name, "\">\n              </div>\n              <h3>").concat(champion.name, "</h3>\n              <p><strong>").concat(champion.title, "</strong></p>\n            </div>\n            <div class=\"card-back\">\n              <div class=\"back-info\">\n              <h3 class=\"back-name\">").concat(champion.name, "</h3>\n              <p class=\"back-blurb\">").concat(champion.blurb, "</p>\n              </div>\n              <p class=\"tipos\">").concat(champion.tags.join(', '), "</p>\n            </div>\n          </div>\n        </div>");
       container.innerHTML += cardHTML; // Añadir la carta al contenedor
     }
   }).catch(function (error) {
@@ -189,7 +189,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55558" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37135" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

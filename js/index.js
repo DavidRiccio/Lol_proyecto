@@ -20,12 +20,12 @@ document.getElementById('load-champions').addEventListener('click', () => {
                 <img src="${championImageUrl}" alt="${champion.name}">
               </div>
               <h3>${champion.name}</h3>
-              <p>${champion.title}</p>
+              <p><strong>${champion.title}</strong></p>
             </div>
             <div class="card-back">
               <div class="back-info">
-              <h3>${champion.name}</h3>
-              <p>${champion.blurb}</p>
+              <h3 class="back-name">${champion.name}</h3>
+              <p class="back-blurb">${champion.blurb}</p>
               </div>
               <p class="tipos">${champion.tags.join(', ')}</p>
             </div>

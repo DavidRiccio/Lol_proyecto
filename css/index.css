@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,14 +14,15 @@ body {
 }
 
 h1 {
+  margin-top: 0px;
   margin-bottom: 40px;
   color: #e1b12c;
 }
 
 #logo {
   display: block;
-  margin: 0 auto;
-  max-width: 400px; /* Tamaño más grande del logo */
+  margin: auto;
+  max-width: 400px; 
 }
 
 #load-champions {
@@ -38,30 +39,30 @@ h1 {
   background-color: #e67e22;
 }
 
-/* Mostrar 4 campeones por fila */
+
 #champion-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+  grid-template-columns: repeat(4, 1fr); 
   gap: 20px;
   max-width: 1600px;
   margin: 40px auto 0;
 }
 
 .card {
-  height: 400px; /* Aumentar la altura de las tarjetas */
+  height: 400px; 
   position: relative;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   overflow: hidden;
-  opacity: 0; /* Comenzar con opacidad cero */
-  animation: fadeIn 0.8s forwards; /* Animación de aparición */
+  opacity: 0; 
+  animation: fadeIn 0.8s forwards; 
 }
 
-/* Animación para que las cartas aparezcan secuencialmente */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px); /* Desplazarse desde abajo */
+    transform: translateY(30px); 
   }
   to {
     opacity: 1;
@@ -70,7 +71,7 @@ h1 {
 }
 
 
-/* Ajustar el frente y reverso */
+
 .card-front, .card-back {
   position: absolute;
   width: 100%;
@@ -85,7 +86,7 @@ h1 {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  padding: 0; /* Eliminar el padding para que la imagen ocupe más espacio */
+  padding: 0; 
 }
 .card-back {
   background-color: #2f2f2f;
@@ -97,12 +98,12 @@ h1 {
   align-items: center;
 }
 
-/* Imágenes alargadas ocupando la mayor parte del div */
+
 .card-image img {
   width: 100%;
-  height: 100%; /* La imagen ocupa el 85% de la tarjeta */
+  height: 100%; 
   object-fit: cover;
-  border: none; /* Eliminar bordes */
+  border: none; 
 }
 
 .card h3{
@@ -117,11 +118,18 @@ h1 {
 }
 
 .card-back p {
-  margin-top: auto;
+  margin-top: 60px;
   margin-bottom: auto;
   padding: 15px;
   font-size: 1rem;
   color: #fdfeff;
+}
+
+.card-back h3 {
+  margin-top: 60px;
+  margin-top: auto;
+  font-size: 1.5rem;
+  color: #ffffff;
 }
 
 .tipos {
@@ -130,6 +138,11 @@ h1 {
   padding: 5px 10px;
   border-radius: 10px;
   margin-top: 10px;
+}
+
+.tipos:hover{
+  background-color: #e1b12c9d;
+  cursor: pointer;
 }
 
 .card:hover .card-back {
